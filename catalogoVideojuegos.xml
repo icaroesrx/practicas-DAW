@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalogo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="catalogovideojuegos.xsd">
+    <!-- El catálogo puede contener 0, uno o más elementos videojuego. -->
+    <!-- codigo de videojuego: obligatorio, 5 caracteres. -->
+    <!-- plataforma de videojuego: PC, PS5, Xbox o Switch. -->
+    <!-- El videojuego debe contener uno o más elementos precio. -->
+    <!-- moneda de precio: por defecto euro. -->
+    <!-- valor de precio: decimal obligatorio. -->
+    <!-- valoracion: decimal entre 0 y 10. El elemento puedo no aparecer. -->
+    <!-- disponible: valor booleano. -->
+
+    <videojuego codigo="VG001" plataforma="PC" edadMinima="12">
+        <titulo>El reino perdido</titulo>
+        <desarrolladora>Pixel Games</desarrolladora>
+        <fechaLanzamiento>2024-03-15</fechaLanzamiento>
+        <precio valor="39.99" />
+        <precio moneda="dolar" valor="41.99" />
+        <valoracion>8.5</valoracion>
+        <disponible>true</disponible>
+    </videojuego>
+
+    <videojuego codigo="VG002" plataforma="PS5" edadMinima="18">
+        <titulo>Sombras de guerra</titulo>
+        <desarrolladora>Digital Studios</desarrolladora>
+        <fechaLanzamiento>2023-11-20</fechaLanzamiento>
+        <precio valor="59.95" />
+        <valoracion>9.2</valoracion>
+        <disponible>false</disponible>
+    </videojuego>
+
+    <videojuego codigo="VG003" plataforma="Switch" edadMinima="7">
+        <titulo>Aventura espacial</titulo>
+        <desarrolladora>Pixel Games</desarrolladora>
+        <fechaLanzamiento>2025-01-10</fechaLanzamiento>
+        <precio valor="29.90" />
+        <precio moneda="dolar" valor="31.99" />
+        <precio moneda="libra" valor="27.99" />
+        <valoracion>7.8</valoracion>
+        <disponible>true</disponible>
+    </videojuego>
+</catalogo>

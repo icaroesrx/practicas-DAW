@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="catalogo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="videojuego" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="titulo" type="xs:string" />
+              <xs:element name="desarrolladora" type="xs:string" />
+              <xs:element name="fechaLanzamiento" type="xs:date" />
+
+
+              <xs:element name="precio" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="moneda" type="xs:string" default="euro" />
+                  <xs:attribute name="valor" type="xs:decimal" use="required" />
+                </xs:complexType>
+              </xs:element>
+
+
+              <xs:element name="valoracion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:minInclusive value="0" />
+                    <xs:maxInclusive value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="disponible" type="xs:boolean" />
+            </xs:sequence>
+
+            <xs:attribute name="codigo" use="required">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:length value="5" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+
+            <xs:attribute name="plataforma">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="PC" />
+                  <xs:enumeration value="PS5" />
+                  <xs:enumeration value="Xbox" />
+                  <xs:enumeration value="Switch" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+
+            <xs:attribute name="edadMinima" type="xs:nonNegativeInteger" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
